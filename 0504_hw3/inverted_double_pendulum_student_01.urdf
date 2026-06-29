@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="custom_inverted_double_pendulum">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001" />
+    </inertial>
+  </link>
+  <link name="cart_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.9716" />
+      <inertia ixx="0.02" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.02" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.2 0.1" />
+      </geometry>
+      <material name="cart_gray">
+        <color rgba="0.35 0.38 0.42 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.2 0.1" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="slider_joint" type="prismatic">
+    <parent link="base_link" />
+    <child link="cart_link" />
+    <origin xyz="0 0 0.15" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-2.4" upper="2.4" effort="200.0" velocity="10.0" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+  <link name="pole_1_link">
+    <inertial>
+      <origin xyz="0 0 0.3" rpy="0 0 0" />
+      <mass value="0.25" />
+      <inertia ixx="0.015" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.015" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.3" rpy="0 0 0" />
+      <geometry>
+        <box size="0.04 0.04 0.6" />
+      </geometry>
+      <material name="pole_blue">
+        <color rgba="0.20 0.55 0.85 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.3" rpy="0 0 0" />
+      <geometry>
+        <box size="0.04 0.04 0.6" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pole_1_joint" type="revolute">
+    <parent link="cart_link" />
+    <child link="pole_1_link" />
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="50.0" velocity="20.0" />
+    <dynamics damping="0.01" friction="0.0" />
+  </joint>
+  <link name="pole_2_link">
+    <inertial>
+      <origin xyz="0 0 0.25" rpy="0 0 0" />
+      <mass value="0.15" />
+      <inertia ixx="0.008" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.008" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.03 0.03 0.5" />
+      </geometry>
+      <material name="pole_orange">
+        <color rgba="0.95 0.55 0.15 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.03 0.03 0.5" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pole_2_joint" type="revolute">
+    <parent link="pole_1_link" />
+    <child link="pole_2_link" />
+    <origin xyz="0 0 0.6" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="50.0" velocity="20.0" />
+    <dynamics damping="0.005" friction="0.0" />
+  </joint>
+</robot>

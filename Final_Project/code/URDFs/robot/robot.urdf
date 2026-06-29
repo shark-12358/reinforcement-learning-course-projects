@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot2">
+  <link
+    name="left_gripper">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-17 0 -0.05"
+        rpy="0 0 0" />
+      <mass
+        value="0.1984" />
+      <inertia
+        ixx="0.000191786666666667"
+        ixy="7.12537667757499E-23"
+        ixz="-1.03694396819121E-20"
+        iyy="0.000191786666666667"
+        iyz="-3.50106951531777E-21"
+        izz="5.29066666666666E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_gripper_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_gripper_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_upper_claw">
+    <inertial>
+      <origin
+        xyz="0.0375 0 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0744" />
+      <inertia
+        ixx="1.24E-05"
+        ixy="1.50440608525707E-21"
+        ixz="-2.07123483442939E-21"
+        iyy="4.47949999999999E-05"
+        iyz="3.50089890740993E-22"
+        izz="3.73549999999999E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_upper_claw_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_upper_claw_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_upper_claw"
+    type="revolute">
+    <origin
+      xyz="0 0.035 -0.01"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="left_gripper" />
+    <child
+      link="left_upper_claw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="3.6"
+      velocity="35" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_upper_limit="1.6"
+      soft_lower_limit="-1.6"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="left_lower_claw">
+    <inertial>
+      <origin
+        xyz="0.0375 0 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0744" />
+      <inertia
+        ixx="1.24E-05"
+        ixy="1.32931652522966E-21"
+        ixz="1.82029909147236E-21"
+        iyy="4.4795E-05"
+        iyz="-1.01402505948846E-21"
+        izz="3.7355E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_lower_claw_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_lower_claw_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_lower_claw"
+    type="revolute">
+    <origin
+      xyz="0 0.035 -0.05"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="left_gripper" />
+    <child
+      link="left_lower_claw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="3.6"
+      velocity="35" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_upper_limit="1.6"
+      soft_lower_limit="-1.6"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="left_wrist">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 5.55111512312578E-17 -0.0203239143677927"
+        rpy="0 0 0" />
+      <mass
+        value="0.0598797497271094" />
+      <inertia
+        ixx="2.83514714221562E-05"
+        ixy="1.60247341631209E-21"
+        ixz="5.00774067546307E-21"
+        iyy="2.45583425818454E-05"
+        iyz="1.72925029038091E-20"
+        izz="1.92447168247394E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_wrist_vhacd.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_wrist_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.101"
+      rpy="0 0 0" />
+    <parent
+      link="left_gripper" />
+    <child
+      link="left_wrist" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.355"
+      upper="2.355"
+      effort="1.8"
+      velocity="35" />
+    <dynamics
+      damping="0.1"
+      friction="0.5" />
+    <safety_controller
+      soft_upper_limit="2.2"
+      soft_lower_limit="-2.2"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="left_elbow">
+    <inertial>
+      <origin
+        xyz="0.0519861622557855 -1.38777878078145E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.169517874452257" />
+      <inertia
+        ixx="4.459142196571E-05"
+        ixy="-7.33394760843222E-21"
+        ixz="-3.84813847294448E-20"
+        iyy="0.000193478456012748"
+        iyz="-9.44590606995044E-22"
+        izz="0.000192793275604156" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_elbow_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_elbow_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0449675346036963"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="left_wrist" />
+    <child
+      link="left_elbow" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="3.6"
+      velocity="73.304" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_upper_limit="1.6"
+      soft_lower_limit="-1.6"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="shoulder">
+    <inertial>
+      <origin
+        xyz="0.0549999699040954 1.67088565206086E-14 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.179613404560029" />
+      <inertia
+        ixx="4.01227314663187E-05"
+        ixy="-3.36313975620511E-20"
+        ixz="6.36417253661814E-19"
+        iyy="0.000216670326834755"
+        iyz="-4.05445173698807E-21"
+        izz="0.000222886273294934" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/shoulder_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/shoulder_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder"
+    type="revolute">
+    <origin
+      xyz="0.11 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_elbow" />
+    <child
+      link="shoulder" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="3.6"
+      velocity="73.304" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_upper_limit="1.6"
+      soft_lower_limit="-1.6"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="right_elbow">
+    <inertial>
+      <origin
+        xyz="0.0246436202359037 1.38777878078145E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0598797497271095" />
+      <inertia
+        ixx="1.92447168247398E-05"
+        ixy="-1.06642828021614E-20"
+        ixz="3.61294353900124E-20"
+        iyy="2.83514714221567E-05"
+        iyz="2.52356304318231E-21"
+        izz="2.45583425818454E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_elbow_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_elbow_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow"
+    type="revolute">
+    <origin
+      xyz="0.109999939808191 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder" />
+    <child
+      link="right_elbow" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="3.6"
+      velocity="73.304" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_upper_limit="1.6"
+      soft_lower_limit="-1.6"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="right_wrist">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0 0.051"
+        rpy="0 0 0" />
+      <mass
+        value="0.1984" />
+      <inertia
+        ixx="0.000191786666666666"
+        ixy="1.67928099088315E-21"
+        ixz="5.1934719545732E-20"
+        iyy="0.000191786666666666"
+        iyz="-4.06750839468013E-20"
+        izz="5.29066666666666E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_wrist_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_wrist_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist"
+    type="revolute">
+    <origin
+      xyz="0.0449675346036963 0 0"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="right_elbow" />
+    <child
+      link="right_wrist" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.355"
+      upper="2.355"
+      effort="1.8"
+      velocity="35" />
+    <dynamics
+      damping="0.1"
+      friction="0.5" />
+    <safety_controller
+      soft_upper_limit="2.2"
+      soft_lower_limit="-2.2"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="right_gripper">
+    <inertial>
+      <origin
+        xyz="0 0 -0.05"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_gripper_vhacd.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_gripper_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_gripper"
+    type="fixed">
+    <origin
+      xyz="0 0 0.101"
+      rpy="0 0 0" />
+    <parent
+      link="right_wrist" />
+    <child
+      link="right_gripper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_upper_claw">
+    <inertial>
+      <origin
+        xyz="0.0375 -2.77555756156289E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0743999999999999" />
+      <inertia
+        ixx="1.24E-05"
+        ixy="-6.94351490206816E-22"
+        ixz="7.46347906192529E-21"
+        iyy="4.47949999999999E-05"
+        iyz="6.39307897020214E-22"
+        izz="3.73549999999999E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_upper_claw_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_upper_claw_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_upper_claw"
+    type="revolute">
+    <origin
+      xyz="0 0.035 -0.01"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="right_gripper" />
+    <child
+      link="right_upper_claw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="3.6"
+      velocity="35" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_upper_limit="1.6"
+      soft_lower_limit="-1.6"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+  <link
+    name="right_lower_claw">
+    <inertial>
+      <origin
+        xyz="0.0375 0 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0744" />
+      <inertia
+        ixx="1.24E-05"
+        ixy="-1.92880193302038E-21"
+        ixz="6.62488284817741E-21"
+        iyy="4.4795E-05"
+        iyz="-3.41452072886653E-22"
+        izz="3.7355E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_lower_claw_vhacd.obj" />
+      </geometry>
+      <material
+        name="PLA">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_lower_claw_vhacd.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_lower_claw"
+    type="revolute">
+    <origin
+      xyz="0 0.035 -0.05"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="right_gripper" />
+    <child
+      link="right_lower_claw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="3.6"
+      velocity="35" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_upper_limit="1.6"
+      soft_lower_limit="-1.6"
+      k_position="50"
+      k_velocity="5" />
+  </joint>
+</robot>

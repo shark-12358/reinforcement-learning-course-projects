@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="env_4">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.984808 0.1 0.080324" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="0.0033474167" ixy="0" ixz="0" iyy="0.3333474167" iyz="0" izz="0.3366666667" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0.492404 0.1 0.080324" rpy="0 -0.174533 0" />
+      <geometry>
+        <box size="1.0 0.2 0.013" />
+      </geometry>
+      <material name="ledge_gray">
+        <color rgba="0.65 0.68 0.72 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.492404 0.1 0.080324" rpy="0 -0.174533 0" />
+      <geometry>
+        <box size="1.0 0.2 0.013" />
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="1.474212 0.1 0.080324" rpy="0 0.174533 0" />
+      <geometry>
+        <box size="1.0 0.2 0.013" />
+      </geometry>
+      <material name="ledge_gray">
+        <color rgba="0.65 0.68 0.72 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.477212 0.1 0.080324" rpy="0 0.174533 0" />
+      <geometry>
+        <box size="1.0 0.2 0.013" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

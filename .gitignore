@@ -1,0 +1,36 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+/env/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Large generated artifacts
+*.zip
+*.mp4
+*.pt
+*.pth
+*.ckpt
+
+# Office source documents; keep exported PDFs/Markdown for review
+*.docx
+*.tmp
+~$*
+
+# Training outputs and local experiments
+Final_Project/results/
+0504_hw3/models/
+0530_final/
+影片/
+
+# Keep source code, reports, plots, and URDF assets versioned.
